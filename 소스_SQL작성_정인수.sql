@@ -155,3 +155,5 @@ select *
 -- 20 ) '박지성' 고객을 삭제해야 한다. 삭제가 안 될 경우 이유를 작성하시오.
 delete from customer
  where name like '박지성';
+ 
+ 
