@@ -172,7 +172,7 @@ order by deptno;
    where t1.deptno = t2.deptno
      and t1.empno = t3.empno
 group by t1.name, t2.deptname ,t3.hoursworked
-order by t3.hoursworked asc;
+order by t1.name asc;
 
 --11. 2명 이상의 사원이 참여한 프로젝트의 번호, 프로젝트명, 사원의 수를 보이시오
   select t1.projno "프로젝트 번호", t1.projname "프로젝트명", count(t2.empno) "투입 사원 수"
@@ -202,7 +202,7 @@ order by deptname;
    
 --14. 사원이 참여한 프로젝트에 대해 사원명, 프로젝트명, 참여시간을 보이는 뷰를 작성하시오.
   DROP view view_test;
-  CREATE view view_test as
+  CREATE view vw_test as
   select t1.name, t2.projname, t3.hoursworked
     from employee t1, project t2, works t3;
     where t1.deptno = t2.deptno
@@ -218,9 +218,9 @@ order by deptname;
                   where projname = '빅데이터 구축' 
                     and t3.deptno = t1.deptno);
 --16. employee 테이블의 name,phoneno 열을 대상으로 인덱스를 생성하시오. (단.인덱스명은 ix.employee2)
-  CREATE index employee2 on employee (name , phoneno);
+  CREATE index ix_employee2 on employee (name , phoneno);
   
-  DROP index employee2;
+  DROP index ix_employee2;
   
   commit;
 --17. 부서별로 급여가 부서평균 급여 보다 높은 사원의 이름과 월급을 보이시오. 
