@@ -69,7 +69,7 @@ select EMP_AUDIT_TR.nextval
 --시퀀스의 최근확인
 select EMP_AUDIT_TR.currval
     from dual;
-    
+
 CREATE TABLE emp_audit(
    e_id   NUMBER(6)
       CONSTRAINT emp_audit_pk PRIMARY KEY,
